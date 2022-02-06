@@ -1,0 +1,160 @@
+@import "null";
+@import "mixins";
+@import "transitions";
+
+.block {
+   background: linear-gradient(0deg, #01a0e4, #01a0e4),
+      radial-gradient(93.71% 252% at 2.99% 5.77%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%);
+   width: 100%;
+
+   border: 1px solid #ffffff;
+   margin: 0 auto;
+
+   border-radius: 20px;
+}
+
+.container {
+   margin: 0 auto;
+   position: relative;
+   min-height: 100vh;
+   width: 100%;
+   padding: 20px 10px 10px 10px;
+}
+
+.block__title {
+   @include adaptiv_font(38, 24);
+   line-height: 110%;
+
+   letter-spacing: 0.02em;
+   text-transform: uppercase;
+
+   color: #ffffff;
+}
+
+.block__text {
+   @include adaptiv_font(18, 15);
+   line-height: 150%;
+
+   color: #ffffff;
+}
+
+.button {
+   font-weight: 600;
+   font-size: 12px;
+   line-height: 150%;
+   text-align: center;
+
+   text-transform: uppercase;
+   background-color: #fff;
+   transition: 0.2s;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+
+   cursor: pointer;
+   color: #01a0e4;
+
+   &:hover {
+      transform: scale(0.97);
+   }
+
+   &:active {
+      transform: scale(0.93);
+   }
+}
+
+.btn-rounded {
+   color: #2b2b2b;
+   border-radius: 120px;
+}
+
+.btn-transparent {
+   background: transparent;
+   font-size: 12px;
+   line-height: 150%;
+   font-family: "gill-sans-500", serif;
+
+   border: 1px solid #fff;
+   color: #ffffff;
+}
+
+.default__close {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   width: 17px;
+   height: 17px;
+   cursor: pointer;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      background: #2b2b2b;
+      top: 50%;
+      left: 0px;
+      height: 1px;
+      transform: rotate(-135deg);
+   }
+
+   &::after {
+      transform: rotate(-45deg);
+   }
+}
+
+.promocode {
+   margin-bottom: 30px;
+   p {
+      font-size: 14px;
+      line-height: 1.6em;
+      text-transform: uppercase;
+
+      color: #2b2b2b;
+
+      b {
+         font-family: "gill-sans-500", serif;
+      }
+   }
+
+   .code {
+      font-size: 18px;
+      line-height: 1.3em;
+      padding: 10px;
+      width: 178px;
+      border: 2px dashed #ffffff;
+      text-align: center;
+      margin-top: 15px;
+      font-family: "gill-sans-500", serif;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      color: #ffffff;
+   }
+}
+
+@media (min-width: 992px) {
+   .default__close {
+      width: 28px;
+      height: 28px;
+      top: 20px;
+      right: 21px;
+
+      &::before,
+      &::after {
+         content: "";
+
+         height: 2px;
+      }
+   }
+
+   .block__number {
+      font-size: 39px !important;
+
+      span {
+         font-size: 18px !important;
+      }
+   }
+}
